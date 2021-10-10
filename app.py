@@ -84,17 +84,17 @@ def test_crc():
     summ = '100'
     Description = "Pay"
     crc =  hashlib.sha256((merchantLogin+':'+str(summ)+':'+str(inv_id)+':'+password).encode('utf-8')).hexdigest()
-    print(merchantLogin+':'+str(summ)+':'+str(inv_id)+':'+Description+':'+password)
-    print(crc)
+    # print(merchantLogin+':'+str(summ)+':'+str(inv_id)+':'+Description+':'+password)
+    # print(crc)
     url = '''https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=%s&OutSum=%s&InvId=%s&Description=%s&SignatureValue=%s&IsTest=1    
     '''%(merchantLogin,summ,inv_id,Description, crc)
-    print(url)
+    # print(url)
 
 
 
 
 if __name__ == '__main__':
-    test_crc()
+    # test_crc()
     executor.start_polling(dp, skip_updates=True)
 
 
